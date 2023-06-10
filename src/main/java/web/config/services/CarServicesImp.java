@@ -13,6 +13,6 @@ public class CarServicesImp implements CarServices {
 
     @Override
     public List<Car> getCars(int count) {
-        return carDao.getCarList(count);
+        return carDao.getCarList(count < 0 ? carDao.getCarList().size() : count);
     }
 }
